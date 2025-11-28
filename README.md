@@ -1,3 +1,3 @@
 ## Campfire Detection Pipeline for Solar Orbiter EUI-hrieuv174 Data
 
-![](https://github.com/sseso/solo-campfiresp/blob/main/showcase3_small.gif](https://github.com/sseso/solo-campfires/blob/main/results/report/showcase3_small.gif))
+![](github.com/sseso/solo-campfires/blob/main/results/report/showcase3_small.gif)
