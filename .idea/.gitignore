@@ -1,0 +1,56 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+.env
+
+# Data
+data/raw/
+data/processed/
+data/*.csv
+data/*.parquet
+data/*.h5
+data/*.pkl
+*.csv
+*.parquet
+*.h5
+*.pkl
+*.zip
+*.tar.gz
+*.mp4
+
+# Large files
+*.h5
+*.hdf5
+*.pth
+*.pt
+*.pickle
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+solar_venv/
+__pycache__/
+*.pyc
