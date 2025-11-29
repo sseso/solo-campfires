@@ -6,7 +6,7 @@
 
 ## Context 
 
-Data from Solar Orbiter's perihelion campaigns offers the highest spatial resolution of the sun's surface to date. As a result, previously unknown, small transient brightenings in the corona (typical areas range from 0.5 Mm^2 to 10 Mm^2), called "campfires", were discovered in Solar Orbiter's first datasets from 2020. To this day, many statistical properties of these events remain unclear, however, campfires are believed to play a significant role in the coronal heating problem, which is why studying them is of highest interest.
+Data from Solar Orbiter's perihelion campaigns offers the highest spatial resolution of the sun's surface to date. As a result, previously unknown, small transient brightenings in the corona (typical areas range from 0.5 Mm^2 to 10 Mm$^2$), called "campfires", were discovered in Solar Orbiter's first datasets from 2020. To this day, many statistical properties of these events remain unclear, however, campfires are believed to play a significant role in the coronal heating problem, which is why studying them is of highest interest.
 
 ## Goal 
 
