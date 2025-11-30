@@ -1,18 +1,18 @@
-# Campfire Detection Pipeline for Solar Orbiter EUI-hrieuv174 Data
+# Campfire Detection Pipeline for Solar Orbiter EUI-HRI-EUV-174 Data
 
 **This pipeline detects and characterizes small-scale transient brightenings, called "campfires", in Solar Orbiter EUI data.**
 
-![](https://github.com/sseso/solo-campfires/blob/main/results/report/showcase3_small.gif)
+![](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/showcase3_small.gif)
 
 ## Usage
-###Prerequisites
+### Prerequisites
 Python 3.8 or higher (lower versions may cause issues with sunpy or astropy).
 A working installation of Jupyter (via pip or conda).
 Access to the Solar Orbiter Archive (SOAR) for downloading FITS data files—note that these can be large (hundreds of MB per dataset), so ensure you have sufficient storage and bandwidth. The project assumes L2-level HRI-EUV-174 Å data; raw or L1 data won't work without preprocessing.
 While the pipeline is notebook-based and straightforward, solar data handling can be finicky due to FITS format specifics and coordinate systems. Test on a small subset first to avoid surprises.
 
 ### Data Fetching
-The pipeline uses real Solar Orbiter data, so you'll have to download it manually form the public SOAR archive (https://soar.esac.esa.int/soar/#search). Select the instrument "Extreme UV-Imager (EUI)", select processing level "L2" and the file name "hrieuv174". You'll find the dataset used in this project by searching between 2020-05-30T00:00:00 to 2020-05-30T23:59:59. (you can use other datasets, of course). Save the .fits files in a folder in "data/raw" and you're good to go.
+The pipeline uses real Solar Orbiter data, so you'll have to download it manually from the public SOAR archive (https://soar.esac.esa.int/soar/#search). Select the instrument "Extreme UV-Imager (EUI)", select processing level "L2" and the file name "hrieuv174". You'll find the dataset used in this project by searching between 2020-05-30T00:00:00 to 2020-05-30T23:59:59. (you can use other datasets, of course). Save the .fits files in a folder in "data/raw" and you're good to go.
 
 ### Installation
 Clone the repository: 
@@ -45,16 +45,15 @@ Then the event statistics:
 - load .csv file
 - run pre-written plots for sanity checks, add new plots if desired
 
-Runtime: 1-2 Minutes for detection pipeline, about 30/sec per 50 frames for movie rendering (with a sensible amount of detections), <30 sec for event statistics (based on tests with a powerful desktop computer and an average thinkpad). 
+Runtime: 1-2 Minutes for detection pipeline, about 30/sec per 50 frames for movie rendering (with a sensible amount of detections), <30 sec for event statistics (based on tests with a powerful desktop computer and an average ThinkPad). 
 
 ### Troubleshooting
 FITS errors: Ensure sunpy version matches requirements.txt, mismatched headers can crash loading.
-Adjust baseline detections with sigma_threshold (different values needed for different datasets).
+Adjust baseline detections with sigma_threshold (values vary for quiet-sun vs. very active region datasets).
 Clustering fails: DBSCAN params are tunable, tweak eps and min_samples if noise dominates..
 For issues, check notebook logs or raise a GitHub issue with your data sample and error traceback.
 
-This setup should get you 90% there, but test it end-to-end before trusting results—solar image analysis is prone to artifacts like cosmic rays or projection distortions. If your notebooks have custom tweaks, swap in specifics above. Let me know if you need refinements!
-
+This setup should get you 90% there, but test it end to end before trusting results; solar image analysis is prone to artifacts like cosmic rays or projection distortions.
 ## Context 
 
 Data from Solar Orbiter's perihelion campaigns offers the highest spatial resolution of the sun's surface to date. As a result, previously unknown, small transient brightenings in the corona (typical areas range from 0.5 Mm^2 to 10 Mm^2), called "campfires", were discovered in Solar Orbiter's first datasets from 2020. To this day, many statistical properties of these events remain unclear, however, campfires are believed to play a significant role in the coronal heating problem, which is why studying them is of highest interest.
@@ -79,7 +78,7 @@ The pipeline also produced realistic datasets, here's some sample plots.
 
 ## Discussion
 
-A critical evaluation of the pipeline confirms its core strengths: It reliably detects visually sensible events and filters out noise effectively (see fig. Detections) at rates (448–1294 per 50-frame sequence) that align well with published benchmarks (Berghmans et al. 2021). Plotting Intensity vs. area shows a positive correlation (Spearman's correlation coefficient of $\rho = 0.657$), similar to positive trends in area-lifetime correlations ($\rho$=0.71; Narang et al. 2025). The brightest and biggest events tending to living longer (as shown by the colormap), which hints at a positive relationship between area/intensity and lifetime as well. The detections also capture a power-law-like or log-normal trend in lifetime distribution, as observed in literature (Berghmans et al. 2021). However, the histogram is a bit front-heavy with a thinned out tail, which hints at fragmentation in lifetime detections, causing more shorter events. This is confirmed through visual inspection of the exported videos with bounding box overlays, where occasional gap frames become evident, explaining the bias towards shorter/truncated lifetime detections. Another crude assumption stems from the fact that equal-width binning in the lifetime histogram slightly distorts the short-tail dominance, though the overall shape (steep drop-off with long tail) holds true. A similar power-law like distribution is cited in many papers for other properties such as area, however, plotting a histogram for the areas of detected events currently shows a very long tail, which signals that some detected areas are overestimated. This could be caused by the small-angle pixel-scale approximation used, which disregards solar curvature, leading to increasing errors for detections at the edge of a frame and overestimation of their area.
+A critical evaluation of the pipeline confirms its core strengths: It reliably detects visually sensible events and filters out noise effectively (see fig. Detections) at rates (448–1294 per 50-frame sequence) that align well with published benchmarks (Berghmans et al. 2021). Plotting Intensity vs. area shows a positive correlation (Spearman's correlation coefficient of $\rho = 0.699$), similar to positive trends in area-lifetime correlations ($\rho$=0.71; Narang et al. 2025). The brightest and biggest events tending to living longer (as shown by the colormap), which hints at a positive relationship between area/intensity and lifetime as well. The detections also capture a power-law-like or log-normal trend in lifetime distribution, as observed in literature (Berghmans et al. 2021). However, the histogram is a bit front-heavy with a thinned out tail, which hints at fragmentation in lifetime detections, causing more shorter events. This is confirmed through visual inspection of the exported videos with bounding box overlays, where occasional gap frames become evident, explaining the bias towards shorter/truncated lifetime detections. Another crude assumption stems from the fact that equal-width binning in the lifetime histogram slightly distorts the short-tail dominance, though the overall shape (steep drop-off with long tail) holds true. A similar power-law like distribution is cited in many papers for other properties such as area, however, plotting a histogram for the areas of detected events currently shows a very long tail, which signals that some detected areas are overestimated. This could be caused by the small-angle pixel-scale approximation used, which disregards solar curvature, leading to increasing errors for detections at the edge of a frame and overestimation of their area.
 
 These insights point to targeted upgrades, including:
 
