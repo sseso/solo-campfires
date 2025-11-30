@@ -16,10 +16,10 @@ The pipeline uses real Solar Orbiter data, so you'll have to download it manuall
 
 ### Installation
 Clone the repository: 
-
-- git clone https://github.com/sseso/solo-campfires.git
-- cd solo-campfires
-
+```bash
+git clone https://github.com/sseso/solo-campfires.git
+cd solo-campfires
+```
 Install the dependencies. This project uses requirements.in for loose specs and requirements.txt for pinned versions (generated via pip-compile). For reproducibility:
 - pip install pip-tools  # If not already installed
 - pip-compile requirements.in  # Updates requirements.txt if needed
