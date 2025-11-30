@@ -142,7 +142,8 @@ These insights point to targeted upgrades, including:
 - Rigorous statistics tools like Maximum likelihood estimation for power-law fits and Kolmogorov-Smirnov tests for literature comparisons;
 - Scaling to larger, finer-cadence datasets available in the public SOAR-archive for truncation-free analysis and higher time resolution.
 
-This project taught me python tools used in solar physics, such as sunpy, astropy and the unsupervised machine-learning tool DBSCAN, FITS data handling and data/image analysis, gave me insight into ongoing research on solar campfires, and made me realize the challenges associated with analyzing and interpreting real physical data, such as handling noise and correct drawing of statistical conclusions from real datasets. With my current results and literature comparison, I compiled several actionable suggestions for improvement, which I will work on implementing in the future.
+### Personal Insight
+This project taught me python tools used in solar physics, such as sunpy, astropy and the unsupervised machine-learning tool DBSCAN, git/version control, FITS data handling and data/image analysis, gave me insight into ongoing research on solar campfires, and made me realize the challenges associated with analyzing and interpreting real physical data, such as handling noise and correct drawing of statistical conclusions from real datasets. With my current results and literature comparison, I compiled several actionable suggestions for improvement, which I will work on implementing in the future.
 
 ## References
 
