@@ -22,25 +22,30 @@ cd solo-campfires
 ```
 Install the dependencies. This project uses requirements.in for loose specs and requirements.txt for pinned versions (generated via pip-compile). For reproducibility:
 ```bash
-- pip install pip-tools  # If not already installed
-- pip-compile requirements.in  # Updates requirements.txt if needed
-- pip install -r requirements.txt
+pip install pip-tools  # If not already installed
+pip-compile requirements.in  # Updates requirements.txt if needed
+pip install -r requirements.txt
 ```
 
 If you're in a hurry or testing, just run 
 ```bash
-- pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 directly. Always use a fresh virtual environment (e.g., venv or conda) to avoid conflicts, sunpy might clash with system astropy installs.
 Launch Jupyter (if not already set up): 
 ```bash
-- pip install jupyter  # Only if missing
+pip install jupyter  # Only if missing
 ```
 ### Running the notebooks
 
 The project is entirely notebook-based, so execution is interactive and modular. The uploaded notebooks already contain the intended structure for usage, but every function has an extensive docstring for easier usage. First run the detection pipeline:
 - import packages
 - for detection pipeline: load dataset
+```python
+dataset = "20200530"
+sequence = load_dataset(dataset)
+```
+  
 - run sigma threshold for baseline detections
 - refine with more filters (mask, spatial merging, spatiotemporal DBSCAN, ...)
 - preview results with still frames (showcase_detections()) or movies (make_movie())
