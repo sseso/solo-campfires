@@ -2,7 +2,7 @@
 
 **This pipeline detects and characterizes small-scale transient brightenings, called "campfires", in Solar Orbiter EUI data.**
 
-![](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/showcase3_small.gif)
+![Detection Showcase .gif](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/showcase3_small.gif)
 
 ## Usage
 ### Prerequisites
@@ -35,7 +35,7 @@ Launch Jupyter (if not already set up):
 
 ### Running the notebooks
 
-The project is entirely notebook-based, so execution is interactive and modular. First run the detection pipeline:
+The project is entirely notebook-based, so execution is interactive and modular. The uploaded notebooks already contain the intended structure for usage, but every function has an extensive docstring for easier usage. First run the detection pipeline:
 - import packages
 - for detection pipeline: load dataset
 - run sigma threshold for baseline detections
@@ -72,12 +72,12 @@ The detections pipeline uses a multi-stage process, combining thresholding, conn
 ## Results
 
 Along with the preview .gif attached above, here's an image directly comparing an original frame with a frame + bounding boxes over the detections.
-![](https://github.com/sseso/solo-campfires/blob/main/results/report/det_vs_orig.png)
+![Original Frame vs. Detections](https://raw.githubusercontent.com/sseso/solo-campfires/blob/main/results/report/det_vs_orig.png)
 
 The pipeline also produced realistic datasets, here's some sample plots.
-![](https://github.com/sseso/solo-campfires/blob/main/results/report/Intensity_vs_Area_and_Lifetime.png)
+![Scatterplot: Intensity vs. Area with colormap]((https://raw.githubusercontent.com/sseso/solo-campfires/blob/main/results/report/Intensity_vs_Area_and_Lifetime.png)
 
-![](https://github.com/sseso/solo-campfires/blob/main/results/report/lifetime_dist_20200530.png)
+![Histogram: Lifetime distribution]((https://raw.githubusercontent.com/sseso/solo-campfires/blob/main/results/report/lifetime_dist_20200530.png)
 
 ## Discussion
 
