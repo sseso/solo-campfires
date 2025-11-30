@@ -143,7 +143,7 @@ These insights point to targeted upgrades, including:
 - Scaling to larger, finer-cadence datasets available in the public SOAR-archive for truncation-free analysis and higher time resolution.
 
 ### Personal Insight
-This project taught me python tools used in solar physics, such as sunpy, astropy and the unsupervised machine-learning tool DBSCAN, git/version control, FITS data handling and data/image analysis, gave me insight into ongoing research on solar campfires, and made me realize the challenges associated with analyzing and interpreting real physical data, such as handling noise and correct drawing of statistical conclusions from real datasets. With my current results and literature comparison, I compiled several actionable suggestions for improvement, which I will work on implementing in the future.
+This project taught me the basics of python tools used in solar physics, such as sunpy, astropy and the unsupervised machine-learning tool DBSCAN, git/version control, FITS data handling and data/image analysis, gave me insight into ongoing research on solar campfires, and made me realize the challenges associated with analyzing and interpreting real physical data, such as handling noise and correct drawing of statistical conclusions from real datasets. With my current results and literature comparison, I compiled several actionable suggestions for improvement, which I will work on implementing in the future.
 
 ## References
 
