@@ -83,12 +83,14 @@ The pipeline also produced realistic datasets, here's some sample plots.
 
 A critical evaluation of the pipeline confirms its core strengths: It reliably detects visually sensible events and filters out noise effectively (see fig. Detections) at rates (448–1294 per 50-frame sequence) that align well with published benchmarks (Berghmans et al. 2021). Plotting Intensity vs. area shows a positive correlation (see fig. Intensity_vs_Area, Spearman's correlation coefficient of $\rho = 0.699$, $p = 5.59\cdot10^{-63}$), with bigger and brighter events tending to live longer (as implied by the colormap), which suggests a positive relationship between area/intensity and lifetime as well, consistent with expected trends (Narang et al. 2025).
 
+### Limitations
 The detections also capture a power-law-like or log-normal trend in lifetime distribution (see fig. Lifetime_Distribution), as observed in literature (Berghmans et al. 2021). However, the histogram is a bit front-heavy with a thinned out tail, which hints at fragmentation in lifetime detections, causing more shorter events. This is confirmed through visual inspection of the exported videos with bounding box overlays, where occasional gap frames become evident, explaining the bias towards shorter/truncated lifetime detections.
 
 Another crude assumption stems from the fact that equal-width binning in the lifetime histogram slightly distorts the short-tail dominance, though the overall shape (steep drop-off with long tail) holds true. A similar power-law like distribution is cited in many papers for other properties such as area, however, plotting a histogram for the areas of detected events currently shows a very long tail, which signals that some detected areas are overestimated. This could be caused by the small-angle pixel-scale approximation used, which disregards solar curvature, leading to increasing errors for detections at the edge of a frame and overestimation of their area.
 
 The biggest opportunity for improvement lies in spatial tracking, as the current implementation cannot recognize moving events (ex. mass ejections), which means the pipeline works well for quiet-sun datasets with little moving components, but detects too many false positives on very active regions.
 
+### Suggested Upgrades
 These insights point to targeted upgrades, including:
 - correct for solar curvature using heliocentric angle (angle between the local surface normal and the line of sight spacecraft);
 - Computer vision based shape classifiers to refine area calculations and reject artifacts;
