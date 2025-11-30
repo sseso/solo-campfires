@@ -90,7 +90,7 @@ Another crude assumption stems from the fact that equal-width binning in the lif
 The biggest opportunity for improvement lies in spatial tracking, as the current implementation cannot recognize moving events (ex. mass ejections), which means the pipeline works well for quiet-sun datasets with little moving components, but detects too many false positives on very active regions.
 
 These insights point to targeted upgrades, including:
-- correct for solar curvature using heliocentric angle (angle between the local surface normal and the line of sight spacecraft)
+- correct for solar curvature using heliocentric angle (angle between the local surface normal and the line of sight spacecraft);
 - Computer vision based shape classifiers to refine area calculations and reject artifacts;
 - ML-driven lifetime tracking for gap free detections;
 - add centroid tracking to detect moving events;
