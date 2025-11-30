@@ -47,13 +47,48 @@ sequence = load_dataset(dataset)
 ```
   
 - run sigma threshold for baseline detections
+```python
+# example usage
+sigma = 3
+df: pd.DataFrame[CampfireData] = sigma_threshold(sequence, sigma, per_frame=True)
+```
 - refine with more filters (mask, spatial merging, spatiotemporal DBSCAN, ...)
+```python
+event_df, detections_df = build_event_catalog(df,
+    spatial_eps=3,
+    temporal_eps_frames = 3,     
+    min_samples=1,
+    min_lifetime_seconds=5,
+    max_lifetime_seconds=500,
+    cadence_seconds=5.0,          
+    max_area_Mm2=15,
+)
+```
 - preview results with still frames (showcase_detections()) or movies (make_movie())
+```python
+# still frame
+frame = 7
+showcase_detections(sequence, frame, detections_df, 10, 0.1, 99.9, 250)
+
+# or make a movie
+make_movie(sequence, detections_df, "file_name", fps = 7, vmin_pct=0.5, vmax_pct = 99.5, show_detections = True)
+```
 - save to .csv if happy with the results
+```python
+save_to_csv(event_df, "file_name")
+```
 
 Then the event statistics:
 - import packages
 - load .csv file
+```python
+# set up paths
+csv_dir = Path("../results/csv")
+dataset = "20200530"
+
+event_df = pd.read_csv(csv_dir / "detections.csv")
+```
+
 - run pre-written plots for sanity checks, add new plots if desired
 
 Runtime: 1-2 Minutes for detection pipeline, about 30/sec per 50 frames for movie rendering (with a sensible amount of detections), <30 sec for event statistics (based on tests with a powerful desktop computer and an average ThinkPad). 
