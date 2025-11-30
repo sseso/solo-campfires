@@ -56,7 +56,7 @@ df: pd.DataFrame[CampfireData] = sigma_threshold(sequence, sigma, per_frame=True
 ```python
 event_df, detections_df = build_event_catalog(df,
     spatial_eps=3,
-    temporal_eps_frames = 3,     
+    temporal_eps_frames=3,     
     min_samples=1,
     min_lifetime_seconds=5,
     max_lifetime_seconds=500,
