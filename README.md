@@ -17,18 +17,19 @@ The pipeline uses real Solar Orbiter data, so you'll have to download it manuall
 ### Installation
 Clone the repository: 
 
-git clone https://github.com/sseso/solo-campfires.git \n
-cd solo-campfires
+- git clone https://github.com/sseso/solo-campfires.git
+- cd solo-campfires
 
 Install the dependencies. This project uses requirements.in for loose specs and requirements.txt for pinned versions (generated via pip-compile). For reproducibility:
-pip install pip-tools  # If not already installed
-pip-compile requirements.in  # Updates requirements.txt if needed
-pip install -r requirements.txt
+- pip install pip-tools  # If not already installed
+- pip-compile requirements.in  # Updates requirements.txt if needed
+- pip install -r requirements.txt
 
-If you're in a hurry or testing, just run pip install -r requirements.txt directly. Always use a fresh virtual environment (e.g., venv or conda) to avoid conflicts, sunpy might clash with system astropy installs.
-Launch Jupyter (if not already set up): 
+If you're in a hurry or testing, just run 
+- pip install -r requirements.txt
+directly. Always use a fresh virtual environment (e.g., venv or conda) to avoid conflicts, sunpy might clash with system astropy installs. Launch Jupyter (if not already set up): 
 
-pip install jupyter  # Only if missing
+- pip install jupyter  # Only if missing
 
 ### Running the notebooks
 
