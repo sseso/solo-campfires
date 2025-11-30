@@ -131,7 +131,7 @@ The detections also capture a power-law-like or log-normal trend in lifetime dis
 
 Another crude assumption stems from the fact that equal-width binning in the lifetime histogram slightly distorts the short-tail dominance, though the overall shape (steep drop-off with long tail) holds true. A similar power-law like distribution is cited in many papers for other properties such as area, however, plotting a histogram for the areas of detected events currently shows a very long tail, which signals that some detected areas are overestimated. This could be caused by the small-angle pixel-scale approximation used, which disregards solar curvature, leading to increasing errors for detections at the edge of a frame and overestimation of their area.
 
-The biggest opportunity for improvement lies in spatial tracking, as the current implementation cannot recognize moving events (ex. mass ejections), which means the pipeline works well for quiet-sun datasets with little moving components, but detects too many false positives on very active regions.
+The biggest opportunity for improvement lies in spatial tracking, as the current implementation cannot recognize moving events (e.g., mass ejections), which means the pipeline works well for quiet-sun datasets with little moving components, but detects too many false positives on very active regions.
 
 ### Suggested Upgrades
 These insights point to targeted upgrades, including:
