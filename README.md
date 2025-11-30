@@ -27,6 +27,7 @@ Install the dependencies. This project uses requirements.in for loose specs and 
 
 If you're in a hurry or testing, just run 
 - pip install -r requirements.txt
+  
 directly. Always use a fresh virtual environment (e.g., venv or conda) to avoid conflicts, sunpy might clash with system astropy installs.
 Launch Jupyter (if not already set up): 
 
