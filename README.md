@@ -75,9 +75,9 @@ Along with the preview .gif attached above, here's an image directly comparing a
 ![Original Frame vs. Detections](https://github.com/sseso/solo-campfires/blob/main/results/report/det_vs_orig.png)
 
 The pipeline also produced realistic datasets, here's some sample plots.
-![Scatterplot: Intensity vs. Area with colormap]((https://github.com//sseso/solo-campfires/blob/main/results/report/Intensity_vs_Area_and_Lifetime.png)
+![Scatterplot: Intensity vs. Area with colormap](https://github.com//sseso/solo-campfires/blob/main/results/report/Intensity_vs_Area_and_Lifetime.png)
 
-![Histogram: Lifetime distribution]((https://github.com//sseso/solo-campfires/blob/main/results/report/lifetime_dist_20200530.png)
+![Histogram: Lifetime distribution](https://github.com//sseso/solo-campfires/blob/main/results/report/lifetime_dist_20200530.png)
 
 ## Discussion
 
