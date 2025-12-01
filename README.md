@@ -11,7 +11,7 @@ Access to the Solar Orbiter Archive (SOAR) for downloading FITS data files—not
 While the pipeline is notebook-based and straightforward, solar data handling can be finicky due to FITS format specifics and coordinate systems. Test on a small subset first to avoid surprises.
 
 ### Data Fetching
-The pipeline uses real Solar Orbiter data, so you'll have to download it manually from the public SOAR archive (https://soar.esac.esa.int/soar/#search). Select the instrument "Extreme UV-Imager (EUI)", select processing level "L2" and the file name "hrieuv174". You'll find the dataset used in this project by searching between 2020-05-30T00:00:00 to 2020-05-30T23:59:59. (you can use other datasets, of course). Save the .fits files in a folder in "data/raw" and you're good to go.
+The pipeline uses real Solar Orbiter data, so you'll have to download it manually from the public SOAR archive (https://soar.esac.esa.int/soar/#search). Select the instrument "Extreme UV-Imager (EUI)", select processing level "L2" and the file name "hrieuv174". You'll find the dataset used in this project by searching between 2020-05-30T00:00:00 to 2020-05-30T23:59:59. (you can use other datasets, of course). Save the .fits files in a folder like "data/raw/yourdataset" and you're good to go.
 
 ### Installation
 Clone the repository: 
