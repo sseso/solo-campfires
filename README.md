@@ -2,7 +2,7 @@
 
 **This pipeline detects and characterizes small-scale transient brightenings, called "campfires", in Solar Orbiter EUI data. You'll find a project summary as a pdf in the root directory, as well as in the README.**
 
-![Detection Showcase .gif](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/showcase3_big.gif)
+![Detection Showcase .gif](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/showcase3_small.gif)
 
 ## Usage
 ### Prerequisites
