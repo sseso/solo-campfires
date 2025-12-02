@@ -143,10 +143,9 @@ The detections pipeline uses a multi-stage process, combining thresholding, conn
 
 ## Results
 
-Along with the preview .gif attached above, here's an image directly comparing an original frame with a frame + bounding boxes over the detections.
+Along with the preview .gif attached above, here's an image directly comparing an original frame with a frame + bounding boxes over the detections, as well as some plots.
 ![Original Frame vs. Detections](https://github.com/sseso/solo-campfires/blob/main/results/report/det_vs_orig.png)
 
-The pipeline also produced realistic datasets, here's some sample plots.
 ![Scatterplot Intensity vs Area with colormap](https://github.com/sseso/solo-campfires/blob/main/results/report/Intensity_vs_Area_and_Lifetime.png)
 
 ![Histogram Lifetime distribution](https://github.com/sseso/solo-campfires/blob/main/results/report/lifetime_dist_20200530.png)
