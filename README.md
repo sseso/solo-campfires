@@ -83,7 +83,7 @@ merged_df = merge_detections(df_masked, radius = 5)
 ```
 - spatiotemporal clustering and morphological filtering (area, lifetime)
 ```python
-event_df, detections_df = build_event_catalog(df,
+event_df, detections_df = build_event_catalog(merged_df,
     spatial_eps=3,
     temporal_eps_frames=3,     
     min_samples=1,
@@ -97,7 +97,7 @@ event_df, detections_df = build_event_catalog(df,
 ```python
 # still frame
 frame = 25
-showcase_detections(sequence, frame, detections, factor=10, vmin_pct=0.1, vmax_pct=99.9, dpi=250)
+showcase_detections(sequence, frame, df=detections, factor=10, vmin_pct=0.1, vmax_pct=99.9, dpi=250)
 
 # or make a movie
 make_movie(sequence, df=detections, file_name="detections_video", fps = 7, vmin_pct=0.5, vmax_pct = 99.5, show_detections = True, dpi = 200)
