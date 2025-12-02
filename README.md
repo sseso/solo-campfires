@@ -5,10 +5,9 @@
 ## Overview
 ### Summary
 - This project automatically detects and characterizes small-scale transient brightenings, called "campfires", in Solar Orbiter EUI data.
-- Pipeline: Sigma Thresholding --> Masking --> Spatial Merging of fragmented events --> Spatiotemporal Clustering with scikit-learn (DBSCAN)
+- Approach: Sigma Thresholding --> Masking --> Spatial Merging of fragmented events --> Spatiotemporal Clustering with scikit-learn (DBSCAN)
   --> Output (Event catalog CSV, annotated still frames, annotated .mp4 movies, plots)
 - early-stage, but already reproduced some key findings from recent literature (positive correlation between Intensity/Area/Lifetime, power-law-like distribution of lifetimes)
-- 
 ### Folder Structure
 ```
 solo-campfires/
