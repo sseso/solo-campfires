@@ -73,7 +73,15 @@ sequence = load_dataset(dataset)
 sigma = 3
 df: pd.DataFrame[CampfireData] = sigma_threshold(sequence, sigma, per_frame=True)
 ```
-- refine with more filters (mask, spatial merging, spatiotemporal DBSCAN, ...)
+- apply masks and spatial merging for fragmented events
+```python
+masks = build_masks(sequence, bright_pct=99, dilation=2, min_area=150)
+df_masked = apply_masks(df, masks)
+visualize_mask(sequence, 25, masks)
+
+merged_df = merge_detections(df_masked, radius = 5)
+```
+- spatiotemporal clustering and morphological filtering (area, lifetime)
 ```python
 event_df, detections_df = build_event_catalog(df,
     spatial_eps=3,
@@ -88,11 +96,11 @@ event_df, detections_df = build_event_catalog(df,
 - preview results with still frames (showcase_detections()) or movies (make_movie())
 ```python
 # still frame
-frame = 7
-showcase_detections(sequence, frame, detections_df, 10, 0.1, 99.9, 250)
+frame = 25
+showcase_detections(sequence, frame, detections, factor=10, vmin_pct=0.1, vmax_pct=99.9, dpi=250)
 
 # or make a movie
-make_movie(sequence, detections_df, "file_name", fps = 7, vmin_pct=0.5, vmax_pct = 99.5, show_detections = True)
+make_movie(sequence, df=detections, file_name="detections_video", fps = 7, vmin_pct=0.5, vmax_pct = 99.5, show_detections = True, dpi = 200)
 ```
 - save to .csv if happy with the results
 ```python
@@ -110,7 +118,7 @@ dataset = "20200530"
 event_df = pd.read_csv(csv_dir / "detections.csv")
 ```
 
-- run pre-written plots for sanity checks, add new plots if desired
+- run pre-written plots for sanity check, add new plots as desired
 
 Runtime: 1-2 Minutes for detection pipeline, about 30/sec per 50 frames for movie rendering (with a sensible amount of detections), <30 sec for event statistics (based on tests with a powerful desktop computer and an average ThinkPad). 
 
