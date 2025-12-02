@@ -5,8 +5,8 @@
 ## Overview
 ### Summary
 - This project automatically detects and characterizes small-scale transient brightenings, called "campfires", in Solar Orbiter EUI data.
-- Approach: Sigma Thresholding --> Masking --> Spatial Merging of fragmented events --> Spatiotemporal Clustering with scikit-learn (DBSCAN)
-  --> Output (Event catalog CSV, annotated still frames, annotated .mp4 movies, plots)
+- Approach: Sigma Thresholding, first connected-component labeling --> Masking --> Spatial Merging of fragmented events --> Spatiotemporal Clustering with scikit-learn (DBSCAN) + morphological filtering
+  --> Output/Visualization (Event catalog CSV, annotated still frames, annotated .mp4 movies, plots)
 - early-stage, but already reproduced some key findings from recent literature (positive correlation between Intensity/Area/Lifetime, power-law-like distribution of lifetimes)
 ### Folder Structure
 ```
@@ -145,7 +145,7 @@ The pipeline also produced realistic datasets, here's some sample plots.
 
 ## Discussion
 
-A critical evaluation of the pipeline confirms its core strengths: It reliably detects visually sensible events and filters out noise effectively (see fig. Detections) at rates (448–1294 per 50-frame sequence) that align well with published benchmarks (Berghmans et al. 2021). Plotting Intensity vs. area shows a positive correlation (see fig. Intensity_vs_Area, Spearman's correlation coefficient of $\rho = 0.699$, $p = 5.59\cdot10^{-63}$), with bigger and brighter events tending to live longer (as implied by the colormap), which suggests a positive relationship between area/intensity and lifetime as well, consistent with expected trends (Narang et al. 2025).
+A critical evaluation of the pipeline confirms its core strengths: It reliably detects visually sensible events and filters out noise effectively (see fig. Detections) at rates (448–1294 per 50-frame sequence) that align well with published benchmarks (1467 events, Berghmans et al. 2021). Plotting Intensity vs. area shows a positive correlation (see fig. Intensity_vs_Area, Spearman's correlation coefficient of $\rho = 0.699$, $p = 5.59\cdot10^{-63}$), with bigger and brighter events tending to live longer (as implied by the colormap), which suggests a positive relationship between area/intensity and lifetime as well, consistent with expected trends (Narang et al. 2025).
 
 ### Limitations
 The detections also capture a power-law-like or log-normal trend in lifetime distribution (see fig. Lifetime_Distribution), as observed in literature (Berghmans et al. 2021). However, the histogram is a bit front-heavy with a thinned out tail, which hints at fragmentation in lifetime detections, causing more shorter events. This is confirmed through visual inspection of the exported videos with bounding box overlays, where occasional gap frames become evident, explaining the bias towards shorter/truncated lifetime detections.
