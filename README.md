@@ -7,23 +7,14 @@
 ### Folder Structure
 ```
 solo-campfires/
-
 ├── notebooks/
-
 ├── src/
-
 ├── results/
-
 │   ├── report/
-
 │   ├── csv/
-
 ├── requirements.in
-
 ├── requirements.txt
-
 ├── README.md
-
 └── project_summary.pdf
 ```
 
