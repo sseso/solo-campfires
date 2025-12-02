@@ -12,13 +12,16 @@
 ```
 solo-campfires/
 ├── notebooks/
-├── src/
+├── data/
+│   ├── raw/
+│   ├── processed/
 ├── results/
-│   ├── report/
 │   ├── csv/
+│   ├── video/
 ├── requirements.in
 ├── requirements.txt
 ├── README.md
+├── LICENSE
 └── project_summary.pdf
 ```
 
