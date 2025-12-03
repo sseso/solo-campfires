@@ -22,7 +22,7 @@ solo-campfires/
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
-└── project_summary.pdf
+└── Project_Summary_SolO_Campfires.pdf
 ```
 
 ## Usage
