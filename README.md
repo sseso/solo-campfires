@@ -1,6 +1,6 @@
 # Campfire Detection Pipeline for Solar Orbiter EUI-HRI-EUV-174 Data
 
-![Detection Showcase .gif](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/showcase3_small.gif)
+![Detection Showcase](https://github.com/sseso/solo-campfires/blob/main/results/report/title.png)
 
 ## Overview
 ### Summary
