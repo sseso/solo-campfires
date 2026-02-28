@@ -1,6 +1,6 @@
 # Campfire Detection Pipeline for Solar Orbiter EUI-HRI-EUV-174 Data
 
-![Detection Showcase .gif](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/showcase3_small.gif)
+![Detection Showcase .gif](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/title.png)
 
 ## Overview
 ### Summary
@@ -148,11 +148,9 @@ Along with the preview .gif attached above, here's an image directly comparing a
 
 ![Scatterplot Intensity vs Area with colormap](https://github.com/sseso/solo-campfires/blob/main/results/report/Intensity_vs_Area_and_Lifetime.png)
 
-![Histogram Lifetime distribution](https://github.com/sseso/solo-campfires/blob/main/results/report/lifetime_dist_20200530.png)
-
 ## Discussion
 
-A critical evaluation of the pipeline confirms its core strengths: It reliably detects visually sensible events and filters out noise effectively (see fig. Detections) at rates (448–1294 per 50-frame sequence) that align well with published benchmarks (1467 events, Berghmans et al. 2021). Plotting Intensity vs. area shows a positive correlation (see fig. Intensity_vs_Area, Spearman's correlation coefficient of $\rho = 0.699$, $p = 5.59\cdot10^{-63}$), with bigger and brighter events tending to live longer (as implied by the colormap), which suggests a positive relationship between area/intensity and lifetime as well, consistent with expected trends (Narang et al. 2025).
+The pipeline detects visually sensible events and filters out noise effectively (see fig. Detections) at rates (448–1294 per 50-frame sequence) that align well with published benchmarks (1467 events, Berghmans et al. 2021). Plotting Intensity vs. area shows a positive correlation (see fig. Intensity_vs_Area, Spearman's correlation coefficient of $\rho = 0.699$, $p = 5.59\cdot10^{-63}$), with bigger and brighter events tending to live longer (as implied by the colormap), which suggests a positive relationship between area/intensity and lifetime as well, consistent with expected trends (Narang et al. 2025).
 
 ### Limitations
 #### **Fragmented Lifetime detection, binned histogram**
