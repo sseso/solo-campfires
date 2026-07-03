@@ -1,6 +1,6 @@
 # Campfire Detection Pipeline for Solar Orbiter EUI-HRI-EUV-174 Data
 
-![Detection Showcase .gif](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/title.png)
+![Detection Showcase](https://raw.githubusercontent.com/sseso/solo-campfires/main/results/report/title.png)
 
 ## Overview
 ### Summary
@@ -128,7 +128,6 @@ Adjust baseline detections with sigma_threshold (values vary for quiet-sun vs. v
 Clustering fails: DBSCAN params are tunable, tweak eps and min_samples if noise dominates..
 For issues, check notebook logs or raise a GitHub issue with your data sample and error traceback.
 
-This setup should get you 90% there, but test it end to end before trusting results; solar image analysis is prone to artifacts like cosmic rays or projection distortions.
 ## Context 
 
 Data from Solar Orbiter's perihelion campaigns offers the highest spatial resolution of the sun's surface to date. As a result, previously unknown, small transient brightenings in the corona (typical areas range from 0.5 Mm^2 to 10 Mm^2), called "campfires", were discovered in Solar Orbiter's first datasets from 2020. To this day, many statistical properties of these events remain unclear, however, campfires are believed to play a significant role in the coronal heating problem, which is why studying them is of highest interest.
@@ -143,16 +142,14 @@ The detections pipeline uses a multi-stage process, combining thresholding, conn
 
 ## Results
 
-Along with the preview .gif attached above, here's an image directly comparing an original frame with a frame + bounding boxes over the detections, as well as some plots.
+Here's an image directly comparing an original frame with a frame + bounding boxes over the detections.
+
 ![Original Frame vs. Detections](https://github.com/sseso/solo-campfires/blob/main/results/report/det_vs_orig.png)
 
-![Scatterplot Intensity vs Area with colormap](https://github.com/sseso/solo-campfires/blob/main/results/report/Intensity_vs_Area_and_Lifetime.png)
-
-![Lifetime Distribution](https://github.com/sseso/solo-campfires/blob/main/results/report/lifetime_dist_20200530.png)
 
 ## Discussion
 
-The pipeline detects visually sensible events and filters out noise effectively (see fig. Detections) at rates (448–1294 per 50-frame sequence) that align well with published benchmarks (1467 events, Berghmans et al. 2021). Plotting Intensity vs. area shows a positive correlation (see fig. Intensity_vs_Area, Spearman's correlation coefficient of $\rho = 0.699$, $p = 5.59\cdot10^{-63}$), with bigger and brighter events tending to live longer (as implied by the colormap), which suggests a positive relationship between area/intensity and lifetime as well, consistent with expected trends (Narang et al. 2025).
+The pipeline detects visually sensible events and filters out noise effectively (see fig. Detections) at rates (448–1294 per 50-frame sequence) that align well with published benchmarks (1467 events, Berghmans et al. 2021). Plotting Intensity vs. area shows a positive correlation, with bigger and brighter events tending to live longer, which suggests a positive relationship between area/intensity and lifetime as well, consistent with expected trends (Narang et al. 2025).
 
 ### Limitations
 #### **Fragmented Lifetime detection, binned histogram**
